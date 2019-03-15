@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Welcome User</title>
+     <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom-cs.css" rel="stylesheet" />
+
+    <!-- PRoduct View Page css and js -->
+    <link rel="stylesheet" href="ProductVIewCss,Js/css/lightbox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="ProductVIewCss,Js/js/prototype.js"></script>
+    <script type="text/javascript" src="ProductVIewCss,Js/js/scriptaculous.js?load=effects"></script>
+    <script type="text/javascript" src="ProductVIewCss,Js/js/lightbox.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--><script>
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "/cart.aspx";
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <div>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand" href="Default.aspx" ><span><img alt="logo" src="images/logo.png" height="50" /></span>HOME HELPER</a>
+              </div>
+              <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="active"><a href="UserHome1.aspx">HOME</a></li>
+                      <li><a href="Calculate.aspx">Calculate</a></li>
+                      <li><a href="Contactus.aspx">Contact</a></li>
+                      <li>
+                          <asp:DropDownList ID="ddlCategory" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged"></asp:DropDownList></li>
+                     <%-- <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li class="dropdown-header">Tiles</li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="Products.aspx?CID=5">woodTiles</a></li>
+                              <li><a href="Products.aspx?CID=2">CeramicTiles</a></li>
+                              <li><a href="Products.aspx?CID=3">GraniteTiles</a></li>
+                              <li><a href="Products.aspx?CID=4">Marbales Tiles</a></li>
+                              <li><a href="Products.aspx?CID=6">Slae Tiles</a></li>
+                              <li><a href="Products.aspx?CID=9">Hexagon Tiles</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li class="dropdown-header">Paints</li>
+                               <li role="separator" class="divider"></li>
+                              <li><a href="#">plastic</a></li>
+                              <li><a href="#">orignal</a></li>
+                              <li><a href="#">dublicate</a></li>
+                          </ul>
+                      </li>--%><li>
+                                <button id="btnCart" class="btn btn-primary navbar-btn" type="button">
+                                    Cart <span class="badge" id="pcount" runat="server"></span>
+                                </button>
+                            </li>
+                      <li>
+                          <asp:Button ID="btnSignOut" runat="server" CssClass="btn btn-default navbar-btn" Text="Sign Out" OnClick="btnSignOut_Click1" />
+                          <asp:Button ID="btnsignin" runat="server" CssClass="btn btn-default navbar-btn" Text="Sign IN" OnClick="btnsignin_Click" />
+                      </li>
+                    
+                  </ul>
+              </div>
+            </div>
+        </div>
+
+
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+
+          
+
+    </div>
+    </form>
+
+    <hr />
+     <!---footer start-->
+    
+         <footer>
+
+        <div class="container">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; dhruv mevada &middot;<a href="Default.aspx">Home</a>&middot;<a href="Default.aspx">about</a>&middot;<a href="Default.aspx">Contact</a>&middot;<a href="Default.aspx">Products</a></p>
+
+
+        </div>
+            </footer>
+
+        <!---footer start-->
+
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
